@@ -3,3 +3,132 @@
   margin: 0;
   box-sizing: border-box;
 }
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-transform: uppercase;
+  color: #333;
+  font-size: 24px;
+}
+
+#new-party-form {
+  margin-bottom: 20px;
+}
+
+#party-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.party {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 300px;
+}
+
+.party h2 {
+  text-transform: uppercase;
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.party p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.party .details-button,
+.party .delete-button {
+  background-color: #4caf50;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 10px;
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.party .details-button {
+  background-color: #008cba;
+}
+
+.party .delete-button {
+  background-color: #f44336;
+}
+
+.party .details-button:hover,
+.party .delete-button:hover {
+  background-color: #45a049;
+}
+
+.party-details {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.party-details h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.party-details p {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.party-details h3 {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.party-details ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 10px;
+}
+
+.party-details li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.close-button {
+  background-color: #f44336;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 10px;
+  margin-top: 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.close-button:hover {
+  background-color: #d32f2f;
+}

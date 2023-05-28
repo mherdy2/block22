@@ -33,6 +33,20 @@ const getPartyById = async (id) => {
 // delete party
 const deleteParty = async (id) => {
   // your code here
+  try {
+    const response = await fetch(`${PARTIES_API_URL}/${id}`, {
+      method: "DELETE",
+    });
+    if (response.ok) {
+      // Party successfully deleted
+      console.log("Party deleted");
+    } else {
+      // Failed to delete party
+      console.error("Failed to delete party");
+    }
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 // render a single party by id
@@ -113,13 +127,18 @@ const renderParties = async (parties) => {
       // see details
       const detailsButton = partyElement.querySelector(".details-button");
       detailsButton.addEventListener("click", async (event) => {
-        // your code here
+        const partyId = event.target.dataset.id;
+        await renderSinglePartyById(partyId);
       });
 
       // delete party
       const deleteButton = partyElement.querySelector(".delete-button");
       deleteButton.addEventListener("click", async (event) => {
-        // your code here
+        const partyId = event.target.dataset.id;
+        await deleteParty(partyId);
+        // Refresh the party list after deleting a party
+        const parties = await getAllParties();
+        await renderParties(parties);
       });
     });
   } catch (error) {
@@ -129,7 +148,12 @@ const renderParties = async (parties) => {
 
 // init function
 const init = async () => {
-  // your code here
+  try {
+    const parties = await getAllParties();
+    await renderParties(parties);
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 init();
