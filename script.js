@@ -50,14 +50,21 @@ const deleteParty = async (id) => {
 };
 
 // render a single party by id
+// render a single party by id
 const renderSinglePartyById = async (id) => {
   try {
+    // fetch party details from server
     const party = await getPartyById(id);
+
+    // GET - /api/workshop/guests/party/:partyId - get guests by party id
     const guestsResponse = await fetch(`${GUESTS_API_URL}/party/${id}`);
     const guests = await guestsResponse.json();
+
+    // GET - /api/workshop/rsvps/party/:partyId - get RSVPs by partyId
     const rsvpsResponse = await fetch(`${RSVPS_API_URL}/party/${id}`);
     const rsvps = await rsvpsResponse.json();
 
+    // create new HTML element to display party details
     const partyDetailsElement = document.createElement("div");
     partyDetailsElement.classList.add("party-details");
     partyDetailsElement.innerHTML = `
@@ -83,6 +90,7 @@ const renderSinglePartyById = async (id) => {
     `;
     partyContainer.appendChild(partyDetailsElement);
 
+    // add event listener to close button
     const closeButton = partyDetailsElement.querySelector(".close-button");
     closeButton.addEventListener("click", () => {
       partyDetailsElement.remove();

@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
   background-color: #0f0101;
   font-family: Arial, sans-serif;
@@ -133,4 +134,12 @@ h1 {
 
 .close-button:hover {
   background-color: #d32f2f;
+}
+
+/* CSS for responsive layout on smaller screens */
+@media (max-width: 768px) {
+  .party,
+  .party-details {
+    width: 100%;
+  }
 }
