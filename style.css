@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #754d4d;
+  background-color: #0f0101;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
@@ -12,7 +12,7 @@ body {
 
 h1 {
   text-transform: uppercase;
-  color: #e1e3ec;
+  color: white;
   font-size: 30px;
   text-align: center;
 }
